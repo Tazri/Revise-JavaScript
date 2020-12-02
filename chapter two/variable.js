@@ -16,3 +16,4 @@ console.log(result);
 console.log(numberThree);
 var numberThree = 1000;
 console.log(numberThree);
+
