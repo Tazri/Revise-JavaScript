@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertAdjacentElement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .buttons button{
+            padding: 10px 20px;
+            background-color: #0088ff;
+            color: #f0f8ff;
+            font-size: 20px;
+            border: 1px solid #0088ff;
+            transition: all 0.4s ease-in;
+        }
+
+        .buttons button:hover{
+            color: #0088ff;
+            background-color: transparent;
+        }
+
+        .buttons button:active{
+            scale : 0.98;
+        }
+    </style>
+</head>
+<body class="bg-[black] text-[aliceblue] p-6">
+    <h2
+     class="text-center text-[40px] my-[20px] "
+    >insertAdjacentElement Method</h2>
+
+    <div id="buttons" class="
+        buttons
+        flex
+        flex-wrap
+        justify-around
+        my-[30px]
+    ">
+        <button>beforebegin</button>
+        <button>afterbegin</button>
+        <button>beforeend</button>
+        <button>afterend</button>
+        <button>clear</button>
+    </div>
+
+    <div id="element" class="
+        p-4
+        border-4
+        border-[aliceblue]
+        h-[500px]
+        relative
+        flex
+        flex-col
+        justify-between
+        m-4
+    ">
+
+    <p class="
+        absolute
+        left-[50%]
+        top-[50%]
+        translate-x-[-50%]
+        translate-y-[-50%]
+        text-[50px]
+    ">Element</p>
+
+    </div>
+
+    <script>
+        
+        // create 4 box
+        let beforeBeginBox = createBox("beforebegin box");
+        let afterBeginBox = createBox("afterbegin box");
+        let beforeEndBox = createBox("beforeend box");
+        let afterEndBox = createBox("afterend box");
+        
+        // get element
+        let element = document.getElementById("element");
+        let buttonsBox = document.getElementById("buttons");
+        
+        buttonsBox.addEventListener("click",event=>{
+            let text = event.target.innerText;
+            let allCommand = [
+                "beforebegin",
+                "afterbegin",
+                "afterend",
+                "beforeend"
+            ]
+
+
+            if(text.toLowerCase() == "clear"){
+                clearBox();
+                return
+            }else if(allCommand.indexOf(text.toLowerCase()) == -1){
+                return
+            }else{
+                // create box and add the box
+                let box = createBox(text);
+                element.insertAdjacentElement(text,box);
+            }
+        });
+        
+        // create box
+        function createBox(text){
+            let box = document.createElement("div");
+
+            box.className = "bg-[#0088ff] p-4 my-2 object-fit text-[#f0f8ff] text-[20px] text-center box"
+            box.textContent = text;
+            return box;
+        }
+
+        // clear
+        function clearBox(){
+            let boxes = document.querySelectorAll(".box");
+
+            boxes.forEach(box=>{
+                box.remove();
+            })
+        }
+        
+
+    </script>
+</body>
+</html>

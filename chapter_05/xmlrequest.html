@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Request</title>
+</head>
+<body>
+    
+    <script>
+        var request = new XMLHttpRequest();
+
+        const url = "https://jsonplaceholder.typicode.com/posts";
+
+        request.open("GET",url,true);
+
+        request.send();
+
+        request.onreadystatechange = function handleRequest(){
+            if(request.readyState == 4){
+                console.log(JSON.parse(request.responseText));
+            }
+        }
+    </script>
+</body>
+</html>
