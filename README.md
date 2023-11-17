@@ -1,13 +1,17 @@
-Revise JavaScript From Book
-===========================
+Think in A JavaScript Way
+==========================
 
-I revise the JavaScript from "হাতেকলমে জাভাস্ক্রিপ্ট" book. Writter is "জুনায়েদ আহমেদ"। This book has 6 chapter. There it is : 
+This branch I document on JavaScript tricky topics. I understand all of topics from a youtube [playlist](https://www.youtube.com/watch?v=KuhLGuNxF8U&list=PLHiZ4m8vCp9Nflbo9a0pZuLscG_Xc7DKq).
 
-- [Basic](./chapter_01/readme.md)
-- [Advance](./chapter_02/readme.md)
-- [ES6](./chapter_03/readme.md)
-- [Everyday JavaScript](./chapter_04/readme.md)
-- [Dom Manipulation](./chapter_05/readme.md)
-- [Project](./chapter_06/readme.md)
+Table of Contains : 
 
-![হাতেকলমে জাভাস্ক্রিপ্ট বই](./asset/hateKolmeJavaScriptBook.jpg)
+- [Currying](./currying/currying.md)
+- [Debounce](./debounce/debounce.md)
+- [Event Delegation](./eventDelegation/eventDelegation.md)
+- [Event Propagation](./eventPropagation/eventPropagation.md)
+- [Generator](./generator/generator.md)
+- [Iterator](./iterator/iterator.md)
+- [Intersection Observer](./intersectionObserver/intersectionObserver.md)
+- [Memozation](./memozation/memozation.md)
+- [Web Worker](./webWorker/webWorker.md)
+
